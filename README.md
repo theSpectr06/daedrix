@@ -105,11 +105,8 @@ For debugging, open the serial monitor at 115200 baud. Every scan prints the raw
 
 Daedrix is a learning project, not a lab instrument.
 
-- **Low resistances are unreliable.** The fixed 1 kΩ pair dominates the loop, so a resistor of a few ohms drops only a few millivolts. Expect wrong readings below roughly 15 Ω, and anything under 5 Ω is reported as UNKNOWN.
-- **Blue and white LEDs may not be detected.** With a 3.3 V supply and two 1 kΩ resistors in the loop, LEDs with a forward voltage close to 3.3 V barely conduct.
-- **Classification uses forward voltage only.** It can't tell a Schottky diode from a low-voltage LED, for example.
-- **Resistors only, not other parts.** Transistors, capacitors and inductors aren't supported and will read as something unpredictable.
-- **No calibration step.** Accuracy depends on your actual resistor tolerances and ADC. Check readings against a multimeter before trusting them.
+- **Low resistances are unreliable** The fixed 1 kΩ pair dominates the loop, so a resistor of a few ohms drops only a few millivolts. Expect wrong readings below roughly 10 Ω, and anything under 5 Ω is reported as UNKNOWN.
+- **Resistors only (for now)** Transistors, capacitors and inductors aren't supported and will read as something unpredictable.
 
 ## Roadmap
 
