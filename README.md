@@ -49,16 +49,13 @@ Anything outside those ranges is shown as UNKNOWN along with the raw readings, s
 
 ### Firmware states
 
-```mermaid
-stateDiagram-v2
-    [*] --> IDLE
-    IDLE --> CREDITS: 15 s with nothing inserted
-    CREDITS --> IDLE: scroll finishes
-    IDLE --> DETECTING: part inserted
-    CREDITS --> DETECTING: part inserted
-    DETECTING --> RESULT: part classified
-    RESULT --> IDLE: part removed
-```
+<p align="center">
+  <img
+    src="docs/images/architecture.svg"
+    alt="Daedrix firmware architecture"
+    width="900"
+  >
+</p>
 
 Removal is debounced. A part has to be missing for four checks in a row (about 0.8 s) before Daedrix leaves the result screen, so a slightly loose part doesn't make the display flicker.
 
